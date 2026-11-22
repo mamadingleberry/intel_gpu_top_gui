@@ -1,0 +1,12 @@
+[Desktop Entry]
+Type=Application
+Name=Intel GPU Monitor
+GenericName=GPU Monitor
+Comment=Graph Intel GPU utilisation, frequency and power over time
+Exec=intel-gpu-top-gui
+Icon=io.github.IntelGpuTopGui
+Terminal=false
+Categories=System;Monitor;GTK;
+Keywords=gpu;intel;graphics;intel_gpu_top;monitor;usage;render;video;
+StartupNotify=true
+StartupWMClass=io.github.IntelGpuTopGui

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <defs>
+    <!-- chip body -->
+    <linearGradient id="body" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#4f9bf0"/>
+      <stop offset="1" stop-color="#1f62b8"/>
+    </linearGradient>
+    <linearGradient id="edge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#174d94"/>
+      <stop offset="1" stop-color="#0d366b"/>
+    </linearGradient>
+    <!-- die / screen -->
+    <linearGradient id="screen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0c1e3a"/>
+      <stop offset="1" stop-color="#12305c"/>
+    </linearGradient>
+    <linearGradient id="pin" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#c9cfd6"/>
+      <stop offset="0.5" stop-color="#eef1f4"/>
+      <stop offset="1" stop-color="#aeb6bf"/>
+    </linearGradient>
+    <linearGradient id="pinv" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#c9cfd6"/>
+      <stop offset="0.5" stop-color="#eef1f4"/>
+      <stop offset="1" stop-color="#aeb6bf"/>
+    </linearGradient>
+    <linearGradient id="area" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#5fc8ff" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#5fc8ff" stop-opacity="0.02"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="1.6"/>
+    </filter>
+    <clipPath id="screenclip">
+      <rect x="30" y="28" width="68" height="66" rx="8"/>
+    </clipPath>
+  </defs>
+
+  <!-- pins (top/bottom) -->
+  <g fill="url(#pin)">
+    <rect x="35" y="8" width="8" height="16" rx="2.5"/>
+    <rect x="52" y="8" width="8" height="16" rx="2.5"/>
+    <rect x="68" y="8" width="8" height="16" rx="2.5"/>
+    <rect x="85" y="8" width="8" height="16" rx="2.5"/>
+    <rect x="35" y="102" width="8" height="16" rx="2.5"/>
+    <rect x="52" y="102" width="8" height="16" rx="2.5"/>
+    <rect x="68" y="102" width="8" height="16" rx="2.5"/>
+    <rect x="85" y="102" width="8" height="16" rx="2.5"/>
+  </g>
+  <!-- pins (left/right) -->
+  <g fill="url(#pinv)">
+    <rect x="8" y="33" width="16" height="8" rx="2.5"/>
+    <rect x="8" y="50" width="16" height="8" rx="2.5"/>
+    <rect x="8" y="66" width="16" height="8" rx="2.5"/>
+    <rect x="8" y="83" width="16" height="8" rx="2.5"/>
+    <rect x="104" y="33" width="16" height="8" rx="2.5"/>
+    <rect x="104" y="50" width="16" height="8" rx="2.5"/>
+    <rect x="104" y="66" width="16" height="8" rx="2.5"/>
+    <rect x="104" y="83" width="16" height="8" rx="2.5"/>
+  </g>
+
+  <!-- chip: darker bottom edge gives the GNOME-style depth -->
+  <rect x="18" y="18" width="92" height="94" rx="16" fill="url(#edge)"/>
+  <rect x="18" y="16" width="92" height="90" rx="16" fill="url(#body)"/>
+  <!-- top highlight -->
+  <rect x="19" y="17" width="90" height="88" rx="15" fill="none"
+        stroke="#ffffff" stroke-opacity="0.25" stroke-width="1.5"/>
+
+  <!-- die / screen -->
+  <rect x="30" y="28" width="68" height="66" rx="8" fill="url(#screen)"/>
+  <g clip-path="url(#screenclip)">
+    <!-- grid -->
+    <g stroke="#ffffff" stroke-opacity="0.10" stroke-width="1">
+      <line x1="30" y1="44.5" x2="98" y2="44.5"/>
+      <line x1="30" y1="61.5" x2="98" y2="61.5"/>
+      <line x1="30" y1="78.5" x2="98" y2="78.5"/>
+      <line x1="47.5" y1="28" x2="47.5" y2="94"/>
+      <line x1="64.5" y1="28" x2="64.5" y2="94"/>
+      <line x1="81.5" y1="28" x2="81.5" y2="94"/>
+    </g>
+    <!-- secondary series (orange, like the app's 2nd colour) -->
+    <polyline points="30,84 40,82 49,78 58,80 67,72 76,75 85,68 98,70"
+              fill="none" stroke="#f08a4b" stroke-width="3"
+              stroke-linejoin="round" stroke-linecap="round"/>
+    <!-- primary series with area fill and glow -->
+    <path d="M30 80 L40 72 L49 75 L58 56 L67 62 L76 40 L85 50 L98 38 L98 94 L30 94 Z"
+          fill="url(#area)"/>
+    <polyline points="30,80 40,72 49,75 58,56 67,62 76,40 85,50 98,38"
+              fill="none" stroke="#5fc8ff" stroke-width="5" stroke-opacity="0.6"
+              stroke-linejoin="round" stroke-linecap="round" filter="url(#glow)"/>
+    <polyline points="30,80 40,72 49,75 58,56 67,62 76,40 85,50 98,38"
+              fill="none" stroke="#bfeaff" stroke-width="3.5"
+              stroke-linejoin="round" stroke-linecap="round"/>
+  </g>
+  <!-- screen inner bevel -->
+  <rect x="30.5" y="28.5" width="67" height="65" rx="7.5" fill="none"
+        stroke="#000000" stroke-opacity="0.35" stroke-width="1"/>
+</svg>

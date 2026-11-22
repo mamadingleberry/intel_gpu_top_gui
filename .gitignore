@@ -1,0 +1,9 @@
+build/
+dist/
+__pycache__/
+*.pyc
+debian/.debhelper/
+debian/intel-gpu-top-gui/
+debian/files
+debian/*.substvars
+debian/debhelper-build-stamp

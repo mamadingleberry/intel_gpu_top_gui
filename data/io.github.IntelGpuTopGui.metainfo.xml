@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.IntelGpuTopGui</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <name>Intel GPU Monitor</name>
+  <summary>Graph Intel GPU utilisation, frequency and power over time</summary>
+  <description>
+    <p>
+      A GTK front-end for intel_gpu_top. It plots engine utilisation, GPU
+      frequency, power draw, RC6 residency, memory bandwidth and interrupts as
+      time series, and lists the processes using the GPU.
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.IntelGpuTopGui.desktop</launchable>
+  <categories>
+    <category>System</category>
+    <category>Monitor</category>
+  </categories>
+  <releases>
+    <release version="1.0.0" date="2026-11-21"/>
+  </releases>
+</component>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE policyconfig PUBLIC
+ "-//freedesktop//DTD PolicyKit Policy Configuration 1.0//EN"
+ "http://www.freedesktop.org/standards/PolicyKit/1/policyconfig.dtd">
+<!--
+  Gives the pkexec prompt for intel_gpu_top a meaningful message.  The
+  authorisation level is deliberately the same as plain pkexec (auth_admin,
+  no credential caching): intel_gpu_top can write files (-o), so it must not
+  become runnable as root without a password.
+-->
+<policyconfig>
+  <action id="io.github.IntelGpuTopGui.intel-gpu-top">
+    <description>Read Intel GPU performance counters</description>
+    <message>Authentication is required to read Intel GPU statistics with intel_gpu_top</message>
+    <icon_name>io.github.IntelGpuTopGui</icon_name>
+    <defaults>
+      <allow_any>auth_admin</allow_any>
+      <allow_inactive>auth_admin</allow_inactive>
+      <allow_active>auth_admin</allow_active>
+    </defaults>
+    <annotate key="org.freedesktop.policykit.exec.path">/usr/bin/intel_gpu_top</annotate>
+  </action>
+</policyconfig>
